@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--background-end-rgb));
+  background: rgb(var(--foreground-rgb))
+}
+
+.Feed{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  padding: 0.75rem;
+}
+
+.Feed-L{
+  grid-column: 1;
+}
+
+.Feed-R{
+  grid-column: span 11/ span 11;
+  padding-left: 0.5rem;
+}
+
+.hover{
+  border-top: 0.5px solid rgb(75, 85, 99);
+  cursor: pointer;
+  transition: all;
+  font-size: 0.8rem;
+}
+
+.hover p{
+  font-size: 0.8rem;
+}
+
+.hover:hover{
+ background-color: rgb(15, 23, 42);
+}
+
+.Feed-B{
+  display: flex;
+  justify-content: space-between;
+  margin-top: .7rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  align-items: center;
+  padding: 0rem 1rem;
+  width: 90%;
+}
+
+*:focus{
+  outline: none;
+}
